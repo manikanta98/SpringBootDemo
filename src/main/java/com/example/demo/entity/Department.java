@@ -1,6 +1,7 @@
 package com.example.demo.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 public class Department {
@@ -11,6 +12,7 @@ public class Department {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long departmentId;
 
+    @NotBlank(message = "Please Add Department Name")
     private String departmentName;
 
     private String departmentAddress;
@@ -68,4 +70,5 @@ public class Department {
 
     public Department() {
     }
+
 }
